@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import {RoutingModule} from "./routing/routing.module";
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

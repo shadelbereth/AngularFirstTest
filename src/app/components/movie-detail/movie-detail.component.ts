@@ -15,7 +15,7 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit(): void {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.foundMovie = this.movieService.getMovie(Number(id));
+    this.movieService.getMovie(Number(id)).subscribe(movieResponse => this.foundMovie = movieResponse);
   }
 
 }
