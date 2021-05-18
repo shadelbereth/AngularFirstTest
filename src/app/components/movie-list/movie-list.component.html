@@ -1,5 +1,5 @@
 <ul class="collection">
-  <li class="collection-item avatar" *ngFor="let movie of movies">
+  <li class="collection-item avatar" *ngFor="let movie of movieObs | async">
     <a routerLink="/movie-detail/{{movie.id}}">
       <img src="{{movie.poster}}" alt="{{movie.title}}" />
       <span class="title">{{movie.title}}</span>
