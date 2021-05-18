@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import {RoutingModule} from "./routing/routing.module";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     MovieListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
