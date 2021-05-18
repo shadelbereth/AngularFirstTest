@@ -46,4 +46,8 @@ export class MovieService {
       year: 2019,
     },
   ];
+
+  getMovie(id: number) {
+    return this.movies.find(movie => movie.id == id);
+  }
 }
