@@ -14,4 +14,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  switchRed() {
+    this.isRed = !this.isRed;
+  }
 }
