@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Movie} from "../../model/Movie";
 import {MovieService} from "../../service/movie.service";
 import {Router} from "@angular/router";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-movie-add',
@@ -16,8 +17,10 @@ export class MovieAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  search(movie : Movie) {
-    this.movieService.lookupMovie(movie.title).subscribe(movieResponse => this.movies = movieResponse);
+  search(ngForm : NgForm) {
+    if (ngForm.valid) {
+      this.movieService.lookupMovie(ngForm.value.title).subscribe(movieResponse => this.movies = movieResponse);
+    }
   }
 
   addNewMovie(movie : Movie) {

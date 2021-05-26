@@ -1,4 +1,4 @@
-<form (ngSubmit)="search(formElement.value)" #formElement="ngForm" novalidate>
+<form (ngSubmit)="search(formElement)" #formElement="ngForm" novalidate>
   <label>Search a title</label>
   <input name="title" #title="ngModel" ngModel [ngClass]="{invalid: !formElement.valid && !formElement.pristine && !formElement.untouched}" required minlength="2">
   <p class="invalid" *ngIf="title.errors?.required">The input field is required</p>
