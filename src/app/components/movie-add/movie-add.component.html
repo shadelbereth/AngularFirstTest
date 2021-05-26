@@ -1,7 +1,7 @@
-<form (ngSubmit)="search(formElement.value)" #formElement="ngForm">
+<form (ngSubmit)="search(formElement.value)" #formElement="ngForm" novalidate>
   <label>Search a title</label>
-  <input name="title" ngModel>
-  <input type="submit" value="Send">
+  <input name="title" ngModel [ngClass]="{invalid: !formElement.valid && !formElement.pristine && !formElement.untouched}" required minlength="2">
+  <input type="submit" value="Send" [disabled]="!formElement.valid">
 </form>
 <ul class="collection">
   <li class="collection-item avatar" *ngFor="let movie of movies">
