@@ -10,17 +10,15 @@ import {Movie} from "../../model/Movie";
 export class MovieListComponent implements OnInit {
   @Input() movie: Movie[] = [];
   @Output() selected : EventEmitter<Movie> = new EventEmitter<Movie>();
+  @Output() delete : EventEmitter<any> = new EventEmitter<any>();
 
   constructor(public movieService:MovieService) { }
 
   ngOnInit(): void {
   }
 
-  fetchMovie() {
-  }
-
   deleteMovie(movie : Movie) {
-    this.movieService.deleteMovie(movie.id).subscribe(() => this.fetchMovie());
+    this.movieService.deleteMovie(movie.id).subscribe(() => this.delete.emit());
   }
 
   showDetail($event: any) {

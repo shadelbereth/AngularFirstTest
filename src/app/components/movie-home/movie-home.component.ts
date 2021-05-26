@@ -17,7 +17,7 @@ export class MovieHomeComponent implements OnInit {
     this.fetchMovie();
   }
 
-  private fetchMovie() {
+  public fetchMovie() {
     this.movieService.getMovies().subscribe(movieResponse => this.movieList = movieResponse);
   }
 
