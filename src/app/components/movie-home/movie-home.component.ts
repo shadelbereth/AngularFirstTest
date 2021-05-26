@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MovieService} from "../../service/movie.service";
+import {Movie} from "../../model/Movie";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-movie-home',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-home.component.css']
 })
 export class MovieHomeComponent implements OnInit {
+  movieList : Movie[] = [];
 
-  constructor() { }
+  constructor(private movieService : MovieService, private router : Router) { }
 
   ngOnInit(): void {
+    this.fetchMovie();
   }
 
+  private fetchMovie() {
+    this.movieService.getMovies().subscribe(movieResponse => this.movieList = movieResponse);
+  }
+
+  goToDetail(movie: Movie) {
+    this.router.navigate(["movie-detail", movie.id])
+  }
 }
