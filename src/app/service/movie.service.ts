@@ -17,4 +17,12 @@ export class MovieService {
   getMovie(id: number) {
     return this.httpClient.get<Movie>(`${environment.apiUrl}/${id}`);
   }
+
+  lookupMovie(searchTitle:string) {
+    return this.httpClient.get<Movie[]>(`${environment.apiUrl}/search`, {params: {title: searchTitle}});
+  }
+
+  addMovie(onlineId:string | undefined) {
+    return this.httpClient.post<Movie>(`${environment.apiUrl}`, {apiId: onlineId});
+  }
 }
