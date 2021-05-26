@@ -1,6 +1,8 @@
 <form (ngSubmit)="search(formElement.value)" #formElement="ngForm" novalidate>
   <label>Search a title</label>
-  <input name="title" ngModel [ngClass]="{invalid: !formElement.valid && !formElement.pristine && !formElement.untouched}" required minlength="2">
+  <input name="title" #title="ngModel" ngModel [ngClass]="{invalid: !formElement.valid && !formElement.pristine && !formElement.untouched}" required minlength="2">
+  <p class="invalid" *ngIf="title.errors?.required">The input field is required</p>
+  <p class="invalid" *ngIf="title.errors?.minlength">The minimum length is 2.</p>
   <input type="submit" value="Send" [disabled]="!formElement.valid">
 </form>
 <ul class="collection">
