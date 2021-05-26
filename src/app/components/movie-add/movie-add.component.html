@@ -1,5 +1,5 @@
-<form (ngSubmit)="search()">
+<form (ngSubmit)="search(formElement.value)" #formElement="ngForm">
   <label>Search a title</label>
-  <input name="title" [(ngModel)]="title">
+  <input name="title" ngModel>
   <input type="submit" value="Send">
 </form>

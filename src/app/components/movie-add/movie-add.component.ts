@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Movie} from "../../model/Movie";
 
 @Component({
   selector: 'app-movie-add',
@@ -6,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-add.component.css']
 })
 export class MovieAddComponent implements OnInit {
-  title: string | undefined;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  search() {
-    console.log(this.title);
+  search(movie : Movie) {
+    console.log(movie);
   }
 }
