@@ -26,4 +26,8 @@ export class MovieAddComponent implements OnInit {
   addNewMovie(movie : Movie) {
     this.movieService.addMovie(movie.onlineId).subscribe(movieResponse => this.router.navigate(["movie-detail", movieResponse.id]));
   }
+
+  goToDetail(movie : Movie) {
+    this.addNewMovie(movie);
+  }
 }

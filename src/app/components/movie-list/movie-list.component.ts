@@ -1,7 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {MovieService} from "../../service/movie.service";
 import {Movie} from "../../model/Movie";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-movie-list',
@@ -9,19 +8,22 @@ import {Observable} from "rxjs";
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-  movieObs: Observable<Movie[]> | undefined;
+  @Input() movie: Movie[] = [];
+  @Output() selected : EventEmitter<Movie> = new EventEmitter<Movie>();
 
   constructor(public movieService:MovieService) { }
 
   ngOnInit(): void {
-    this.fetchMovie()
   }
 
   fetchMovie() {
-    this.movieObs = this.movieService.getMovies();
   }
 
   deleteMovie(movie : Movie) {
     this.movieService.deleteMovie(movie.id).subscribe(() => this.fetchMovie());
+  }
+
+  showDetail($event: any) {
+    this.selected.emit($event);
   }
 }

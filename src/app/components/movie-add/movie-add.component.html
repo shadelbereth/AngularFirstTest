@@ -9,11 +9,4 @@
   </p>
   <input type="submit" value="Send" [disabled]="!formElement.valid">
 </form>
-<ul class="collection">
-  <li class="collection-item avatar" *ngFor="let movie of movies">
-    <a (click)="addNewMovie(movie)">
-      <img src="{{movie.poster}}" alt="{{movie.title}}" />
-      <span class="title">{{movie.title}}</span>
-    </a>
-  </li>
-</ul>
+<app-movie-list [movie]="movies" (selected)="goToDetail($event)"></app-movie-list>
