@@ -1,1 +1,5 @@
-<p>movie-add works!</p>
+<form (ngSubmit)="search()">
+  <label>Search a title</label>
+  <input name="title" [(ngModel)]="title">
+  <input type="submit" value="Send">
+</form>

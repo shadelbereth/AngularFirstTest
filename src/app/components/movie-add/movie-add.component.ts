@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-add.component.css']
 })
 export class MovieAddComponent implements OnInit {
+  title: string | undefined;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  search() {
+    console.log(this.title);
+  }
 }
