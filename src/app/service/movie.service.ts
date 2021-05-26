@@ -25,4 +25,8 @@ export class MovieService {
   addMovie(onlineId:string | undefined) {
     return this.httpClient.post<Movie>(`${environment.apiUrl}`, {apiId: onlineId});
   }
+
+  deleteMovie(id : number | undefined) {
+    return this.httpClient.delete(`${environment.apiUrl}/${id}`);
+  }
 }

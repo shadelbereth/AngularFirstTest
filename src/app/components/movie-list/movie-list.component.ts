@@ -14,7 +14,14 @@ export class MovieListComponent implements OnInit {
   constructor(public movieService:MovieService) { }
 
   ngOnInit(): void {
+    this.fetchMovie()
+  }
+
+  fetchMovie() {
     this.movieObs = this.movieService.getMovies();
   }
 
+  deleteMovie(movie : Movie) {
+    this.movieService.deleteMovie(movie.id).subscribe(() => this.fetchMovie());
+  }
 }
