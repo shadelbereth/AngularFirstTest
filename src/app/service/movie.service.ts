@@ -11,22 +11,22 @@ export class MovieService {
   constructor(private httpClient: HttpClient) { }
 
   getMovies() {
-    return this.httpClient.get<Movie[]>(environment.apiUrl);
+    return this.httpClient.get<Movie[]>(`${environment.apiUrl}/movies`);
   }
 
   getMovie(id: number) {
-    return this.httpClient.get<Movie>(`${environment.apiUrl}/${id}`);
+    return this.httpClient.get<Movie>(`${environment.apiUrl}/movies/${id}`);
   }
 
   lookupMovie(searchTitle:string) {
-    return this.httpClient.get<Movie[]>(`${environment.apiUrl}/search`, {params: {title: searchTitle}});
+    return this.httpClient.get<Movie[]>(`${environment.apiUrl}/movies/search`, {params: {title: searchTitle}});
   }
 
   addMovie(onlineId:string | undefined) {
-    return this.httpClient.post<Movie>(`${environment.apiUrl}`, {apiId: onlineId});
+    return this.httpClient.post<Movie>(`${environment.apiUrl}/movies`, {apiId: onlineId});
   }
 
   deleteMovie(id : number | undefined) {
-    return this.httpClient.delete(`${environment.apiUrl}/${id}`);
+    return this.httpClient.delete(`${environment.apiUrl}/movies/${id}`);
   }
 }

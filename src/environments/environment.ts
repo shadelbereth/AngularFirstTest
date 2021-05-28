@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://angularcoursebackend.azurewebsites.net/api/movies'
+  apiUrl: 'https://angularcoursebackend.azurewebsites.net/api/'
 };
 
 /*
