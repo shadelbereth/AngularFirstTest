@@ -13,6 +13,7 @@ import { MovieHomeComponent } from './components/movie-home/movie-home.component
 import {AuthorizationInterceptor} from "./service/authorization.interceptor";
 import { TVShowHomeComponent } from './components/tvshow-home/tvshow-home.component';
 import { AudioVisualProdDetailComponent } from './components/audio-visual-prod-detail/audio-visual-prod-detail.component';
+import { TVShowDetailComponent } from './components/tvshow-detail/tvshow-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AudioVisualProdDetailComponent } from './components/audio-visual-prod-d
     MovieAddComponent,
     MovieHomeComponent,
     TVShowHomeComponent,
-    AudioVisualProdDetailComponent
+    AudioVisualProdDetailComponent,
+    TVShowDetailComponent
   ],
   imports: [
     BrowserModule,
