@@ -17,4 +17,12 @@ export class TVShowService {
   getTVShow(id: number) {
     return this.httpClient.get<TVShow>(`${environment.apiUrl}/tvshows/${id}`);
   }
+
+  lookupTVShow(tvShow : TVShow) {
+    return this.httpClient.get<TVShow[]>(`${environment.apiUrl}/tvshows/search`, {params : {title: tvShow.title}});
+  }
+
+  addTVShow(tvShow : TVShow) {
+    return this.httpClient.post<TVShow>(`${environment.apiUrl}/tvshows/watchlist`, {apiId: tvShow.onlineId});
+  }
 }

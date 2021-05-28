@@ -9,4 +9,4 @@
   </p>
   <input type="submit" value="Send" [disabled]="!formElement.valid">
 </form>
-<app-audio-visual-prod-list [audioVisualProd]="audioVisualProds" (selected)="goToDetail($event)"></app-audio-visual-prod-list>
+<app-audio-visual-prod-list [audioVisualProd]="audioVisualProds" (selected)="goToDetail($event)" [hideDelete]="true"></app-audio-visual-prod-list>

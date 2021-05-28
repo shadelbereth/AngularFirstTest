@@ -1,7 +1,5 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {MovieService} from "../../service/movie.service";
-import {ActivatedRoute} from "@angular/router";
-import {MovieAddComponent} from "../movie-add/movie-add.component";
 import {AudioVisualProd} from "../../model/audio-visual-prod";
 
 @Component({
@@ -13,10 +11,9 @@ export class AudioVisualProdListComponent implements OnInit {
   @Input() audioVisualProd: AudioVisualProd[] = [];
   @Output() selected : EventEmitter<AudioVisualProd> = new EventEmitter<AudioVisualProd>();
   @Output() delete : EventEmitter<any> = new EventEmitter<any>();
-  hideDelete = false;
+  @Input() hideDelete = false;
 
-  constructor(public movieService:MovieService, private activatedRoute : ActivatedRoute) {
-    this.hideDelete = activatedRoute.snapshot.component === MovieAddComponent;
+  constructor(public movieService:MovieService) {
   }
 
   ngOnInit(): void {
