@@ -2,7 +2,18 @@
   <nav>
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a routerLink="movie/add">Add a movie</a></li>
+        <li>
+          <a routerLink="movie/list">Movie</a>
+          <ul>
+            <li><a routerLink="movie/add">Add a movie</a></li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="tv-show/list">TV Show</a>
+          <ul>
+            <li><a routerLink="tv-show/add">Add a TV show</a></li>
+          </ul>
+        </li>
       </ul>
       <span class="brand-logo">{{title}}</span>
     </div>
