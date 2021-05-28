@@ -1,11 +1,6 @@
-export interface Movie {
-  id?: number;
-  title: string;
-  year: number;
-  runtime?: number;
+import {AudioVisualProd} from "./audio-visual-prod";
+
+export interface Movie extends AudioVisualProd{
   plot?: string;
-  poster: string;
-  rating?: number;
-  onlineId?: string;
   seen?: boolean;
 }
