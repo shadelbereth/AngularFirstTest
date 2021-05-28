@@ -1,17 +1,17 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {MovieService} from "../../service/movie.service";
-import {Movie} from "../../model/Movie";
 import {ActivatedRoute} from "@angular/router";
 import {MovieAddComponent} from "../movie-add/movie-add.component";
+import {AudioVisualProd} from "../../model/audio-visual-prod";
 
 @Component({
-  selector: 'app-movie-list',
-  templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css']
+  selector: 'app-audio-visual-prod-list',
+  templateUrl: './audio-visual-prod-list.component.html',
+  styleUrls: ['./audio-visual-prod-list.component.css']
 })
-export class MovieListComponent implements OnInit {
-  @Input() movie: Movie[] = [];
-  @Output() selected : EventEmitter<Movie> = new EventEmitter<Movie>();
+export class AudioVisualProdListComponent implements OnInit {
+  @Input() audioVisualProd: AudioVisualProd[] = [];
+  @Output() selected : EventEmitter<AudioVisualProd> = new EventEmitter<AudioVisualProd>();
   @Output() delete : EventEmitter<any> = new EventEmitter<any>();
   hideDelete = false;
 
@@ -22,8 +22,8 @@ export class MovieListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteMovie(movie : Movie) {
-    this.movieService.deleteMovie(movie.id).subscribe(() => this.delete.emit());
+  deleteAudioVisualProd(audioVisualProd : AudioVisualProd) {
+    this.movieService.deleteMovie(audioVisualProd.id).subscribe(() => this.delete.emit());
   }
 
   showDetail($event: any) {

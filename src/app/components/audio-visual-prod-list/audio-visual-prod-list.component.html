@@ -1,0 +1,9 @@
+<ul class="collection">
+  <li class="collection-item avatar" *ngFor="let audioVisualProd of audioVisualProd">
+    <a (click)="showDetail(audioVisualProd)">
+      <img src="{{audioVisualProd.poster}}" alt="{{audioVisualProd.title}}" />
+      <span class="title">{{audioVisualProd.title}}</span>
+    </a>
+    <a *ngIf="!hideDelete" (click)="deleteAudioVisualProd(audioVisualProd)">delete</a>
+  </li>
+</ul>

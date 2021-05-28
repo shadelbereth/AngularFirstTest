@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { AudioVisualProdListComponent } from './components/audio-visual-prod-list/audio-visual-prod-list.component';
 import {RoutingModule} from "./routing/routing.module";
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
@@ -17,7 +17,7 @@ import { TVShowHomeComponent } from './components/tvshow-home/tvshow-home.compon
   declarations: [
     AppComponent,
     HeaderComponent,
-    MovieListComponent,
+    AudioVisualProdListComponent,
     MovieDetailComponent,
     MovieAddComponent,
     MovieHomeComponent,
