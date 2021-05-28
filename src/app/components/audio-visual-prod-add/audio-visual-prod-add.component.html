@@ -1,1 +1,12 @@
-<p>audio-visual-prod-add works!</p>
+<form (ngSubmit)="searchProd(formElement)" #formElement="ngForm" novalidate>
+  <label>Search a title</label>
+  <input name="title" ngModel [ngClass]="{invalid: !formElement.valid && !formElement.pristine && !formElement.untouched}" required minlength="2">
+  <p class="invalid" *ngIf="formElement.form.controls.title.errors?.required">
+    The input field is required
+  </p>
+  <p class="invalid" *ngIf="formElement.form.controls.title.errors?.minlength">
+    The minimum length is 2. Currently you only have {{formElement.form.controls.title.errors?.minlength?.actualLength}}.
+  </p>
+  <input type="submit" value="Send" [disabled]="!formElement.valid">
+</form>
+<app-audio-visual-prod-list [audioVisualProd]="audioVisualProds" (selected)="goToDetail($event)"></app-audio-visual-prod-list>
