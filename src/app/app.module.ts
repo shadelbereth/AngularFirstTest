@@ -14,6 +14,7 @@ import {AuthorizationInterceptor} from "./service/authorization.interceptor";
 import { TVShowHomeComponent } from './components/tvshow-home/tvshow-home.component';
 import { AudioVisualProdDetailComponent } from './components/audio-visual-prod-detail/audio-visual-prod-detail.component';
 import { TVShowDetailComponent } from './components/tvshow-detail/tvshow-detail.component';
+import { AudioVisualProdAddComponent } from './components/audio-visual-prod-add/audio-visual-prod-add.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TVShowDetailComponent } from './components/tvshow-detail/tvshow-detail.
     MovieHomeComponent,
     TVShowHomeComponent,
     AudioVisualProdDetailComponent,
-    TVShowDetailComponent
+    TVShowDetailComponent,
+    AudioVisualProdAddComponent
   ],
   imports: [
     BrowserModule,
