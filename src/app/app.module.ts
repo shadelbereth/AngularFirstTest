@@ -15,6 +15,7 @@ import { TVShowHomeComponent } from './components/tvshow-home/tvshow-home.compon
 import { AudioVisualProdDetailComponent } from './components/audio-visual-prod-detail/audio-visual-prod-detail.component';
 import { TVShowDetailComponent } from './components/tvshow-detail/tvshow-detail.component';
 import { AudioVisualProdAddComponent } from './components/audio-visual-prod-add/audio-visual-prod-add.component';
+import { TVShowAddComponent } from './components/tvshow-add/tvshow-add.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AudioVisualProdAddComponent } from './components/audio-visual-prod-add/
     TVShowHomeComponent,
     AudioVisualProdDetailComponent,
     TVShowDetailComponent,
-    AudioVisualProdAddComponent
+    AudioVisualProdAddComponent,
+    TVShowAddComponent
   ],
   imports: [
     BrowserModule,
