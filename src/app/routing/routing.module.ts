@@ -4,12 +4,14 @@ import {MovieDetailComponent} from "../components/movie-detail/movie-detail.comp
 import {MovieAddComponent} from "../components/movie-add/movie-add.component";
 import {MovieHomeComponent} from "../components/movie-home/movie-home.component";
 import {TVShowHomeComponent} from "../components/tvshow-home/tvshow-home.component";
+import {TVShowDetailComponent} from "../components/tvshow-detail/tvshow-detail.component";
 
 const routes: Routes = [
   {path: 'movie/list', component: MovieHomeComponent},
   {path: 'movie-detail/:id', component: MovieDetailComponent},
   {path: 'movie/add', component: MovieAddComponent},
   {path: 'tv-show/list', component: TVShowHomeComponent},
+  {path: 'tv-show-detail/:id', component: TVShowDetailComponent},
   {path: '**', redirectTo: 'movie/list'}
 ];
 

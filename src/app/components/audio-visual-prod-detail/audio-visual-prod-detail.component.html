@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="card-action">
-        <a class="btn" routerLink="list">Go Back</a>
+        <a class="btn" routerLink="{{isTVShow(foundProd) ? '/tv-show/' : isMovie(foundProd) ? '/movie/' : ''}}list">Go Back</a>
       </div>
     </div>
   </div>

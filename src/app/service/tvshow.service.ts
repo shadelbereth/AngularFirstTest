@@ -13,4 +13,8 @@ export class TVShowService {
   getTVShows() {
     return this.httpClient.get<TVShow[]>(`${environment.apiUrl}/tvshows`);
   }
+
+  getTVShow(id: number) {
+    return this.httpClient.get<TVShow>(`${environment.apiUrl}/tvshows/${id}`);
+  }
 }
