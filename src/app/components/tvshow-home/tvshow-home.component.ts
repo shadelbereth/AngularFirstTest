@@ -25,4 +25,8 @@ export class TVShowHomeComponent implements OnInit {
   fetchTVShow() {
     this.tvShowService.getTVShows().subscribe(tvShowResponse => this.tvShows = tvShowResponse);
   }
+
+  deleteTVShow(tvShow: TVShow) {
+    this.tvShowService.deleteTVShow(tvShow).subscribe(() => this.fetchTVShow());
+  }
 }

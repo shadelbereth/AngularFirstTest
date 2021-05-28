@@ -24,4 +24,8 @@ export class MovieHomeComponent implements OnInit {
   goToDetail(movie: Movie) {
     this.router.navigate(["movie-detail", movie.id])
   }
+
+  deleteMovie(movie: Movie) {
+    this.movieService.deleteMovie(movie.id).subscribe(() => this.fetchMovie())
+  }
 }

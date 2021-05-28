@@ -25,4 +25,8 @@ export class TVShowService {
   addTVShow(tvShow : TVShow) {
     return this.httpClient.post<TVShow>(`${environment.apiUrl}/tvshows/watchlist`, {apiId: tvShow.onlineId});
   }
+
+  deleteTVShow(tvShow : TVShow) {
+    return this.httpClient.delete(`${environment.apiUrl}/tvshows/${tvShow.id}`);
+  }
 }

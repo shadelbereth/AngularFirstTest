@@ -20,7 +20,7 @@ export class AudioVisualProdListComponent implements OnInit {
   }
 
   deleteAudioVisualProd(audioVisualProd : AudioVisualProd) {
-    this.movieService.deleteMovie(audioVisualProd.id).subscribe(() => this.delete.emit());
+    this.delete.emit(audioVisualProd);
   }
 
   showDetail($event: any) {
