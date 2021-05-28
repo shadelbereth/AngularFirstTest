@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <img src="{{foundProd?.poster}}">
+        <span class="card-title">{{foundProd?.title}}</span>
+      </div>
+      <div class="card-content grey-text text-darken-4">
+        <div class="row" *ngIf="isMovie(foundProd)">
+          <span class="col s6">Plot</span>
+          <span class="col s6">{{convertToMovie(foundProd)?.plot}}</span>
+        </div>
+        <div class="row" *ngIf="isTVShow(foundProd)">
+          <span class="col s6">Overview</span>
+          <span class="col s6">{{convertToTVShow(foundProd)?.overview}}</span>
+        </div>
+        <div class="row">
+          <span class="col s6">Rating</span>
+          <span class="col s6">{{foundProd?.rating}}</span>
+        </div>
+        <div class="row">
+          <span class="col s6">Year</span>
+          <span class="col s6">{{foundProd?.year}}</span>
+        </div>
+      </div>
+      <div class="card-action">
+        <a class="btn" routerLink="list">Go Back</a>
+      </div>
+    </div>
+  </div>
+</div>

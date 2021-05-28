@@ -12,6 +12,7 @@ import {FormsModule} from "@angular/forms";
 import { MovieHomeComponent } from './components/movie-home/movie-home.component';
 import {AuthorizationInterceptor} from "./service/authorization.interceptor";
 import { TVShowHomeComponent } from './components/tvshow-home/tvshow-home.component';
+import { AudioVisualProdDetailComponent } from './components/audio-visual-prod-detail/audio-visual-prod-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TVShowHomeComponent } from './components/tvshow-home/tvshow-home.compon
     MovieDetailComponent,
     MovieAddComponent,
     MovieHomeComponent,
-    TVShowHomeComponent
+    TVShowHomeComponent,
+    AudioVisualProdDetailComponent
   ],
   imports: [
     BrowserModule,
